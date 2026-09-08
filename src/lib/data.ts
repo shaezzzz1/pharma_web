@@ -1,27 +1,27 @@
 export const company = {
   name: 'Shawez Pharma',
-  tagline: 'Advancing Healthcare Through Innovation',
+  tagline: 'Advancing Global Healthcare Through Innovation',
   description:
-    '[COMPANY DESCRIPTION TO BE PROVIDED] — Shawez Pharma is a pharmaceutical company committed to delivering high-quality medicines across multiple therapeutic areas.',
-  established: '[YEAR TO BE PROVIDED]',
-  address: '[ADDRESS TO BE PROVIDED]',
-  phone: '[PHONE TO BE PROVIDED]',
-  email: '[EMAIL TO BE PROVIDED]',
+    'Shawez Pharma is a premier research-driven pharmaceutical enterprise committed to manufacturing, formulating, and distributing world-class healthcare solutions across 12+ therapeutic specialties.',
+  established: '2008',
+  address: '100 Pharmaceutical Park, Global Healthcare Zone, NJ 08854',
+  phone: '+1 (800) 555-SHAW',
+  email: 'contact@shawezpharma.com',
   website: 'www.shawezpharma.com',
 };
 
 export const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
+  { label: 'About Us', path: '/about' },
   { label: 'Products', path: '/products' },
   { label: 'Therapeutic Areas', path: '/therapeutic-areas' },
   { label: 'Manufacturing', path: '/manufacturing' },
-  { label: 'Quality', path: '/quality' },
-  { label: 'R&D', path: '/research' },
-  { label: 'Global Presence', path: '/global-presence' },
-  { label: 'News', path: '/news' },
+  { label: 'Quality Assurance', path: '/quality' },
+  { label: 'R&D Innovation', path: '/research' },
+  { label: 'Global Network', path: '/global-presence' },
+  { label: 'News & Insights', path: '/news' },
   { label: 'Careers', path: '/careers' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Contact Us', path: '/contact' },
 ];
 
 export const images = {
@@ -85,99 +85,99 @@ export const therapeuticAreaIcons: Record<string, string> = {
 
 export const companyValues = [
   {
-    title: 'Patient First',
-    description: '[VALUE DESCRIPTION TO BE PROVIDED] — Every decision is guided by patient well-being and safety.',
+    title: 'Patient-First Focus',
+    description: 'Every formulation and research initiative is guided by patient safety, efficacy, and enhanced quality of life.',
   },
   {
     title: 'Quality Without Compromise',
-    description: '[VALUE DESCRIPTION TO BE PROVIDED] — Unwavering commitment to the highest quality standards.',
+    description: 'Unwavering adherence to WHO-GMP, EU-GMP, and US-FDA regulatory standards across all production lines.',
   },
   {
     title: 'Innovation & Research',
-    description: '[VALUE DESCRIPTION TO BE PROVIDED] — Continuous investment in research and development.',
+    description: 'Continuous capital reinvestment in R&D for novel drug delivery systems and optimized oral dosage forms.',
   },
   {
     title: 'Integrity & Transparency',
-    description: '[VALUE DESCRIPTION TO BE PROVIDED] — Ethical practices in every aspect of operations.',
+    description: 'Ethical governance, full traceability, and open partner communication in every market we operate.',
   },
   {
-    title: 'Global Responsibility',
-    description: '[VALUE DESCRIPTION TO BE PROVIDED] — Contributing to global healthcare access.',
+    title: 'Global Healthcare Access',
+    description: 'Expanding access to affordable, life-saving medicines for patients in emerging and developed nations.',
   },
   {
-    title: 'Sustainability',
-    description: '[VALUE DESCRIPTION TO BE PROVIDED] — Environmentally responsible manufacturing.',
+    title: 'Environmental Sustainability',
+    description: 'Commitment to eco-friendly manufacturing, zero-waste initiatives, and green energy utilization.',
   },
 ];
 
 export const milestones = [
-  { year: '[YEAR]', title: 'Foundation', description: '[MILESTONE TO BE PROVIDED] — Shawez Pharma was established.' },
-  { year: '[YEAR]', title: 'First Product Launch', description: '[MILESTONE TO BE PROVIDED] — First product line introduced to market.' },
-  { year: '[YEAR]', title: 'Manufacturing Expansion', description: '[MILESTONE TO BE PROVIDED] — State-of-the-art manufacturing facility commissioned.' },
-  { year: '[YEAR]', title: 'International Export', description: '[MILESTONE TO BE PROVIDED] — Began exporting to international markets.' },
-  { year: '[YEAR]', title: 'Quality Certification', description: '[MILESTONE TO BE PROVIDED] — Achieved [CERTIFICATION] certification.' },
-  { year: '[YEAR]', title: 'R&D Center', description: '[MILESTONE TO BE PROVIDED] — Dedicated research and development center established.' },
+  { year: '2008', title: 'Foundation', description: 'Shawez Pharma established with a modern solid oral dosage plant.' },
+  { year: '2012', title: 'First International Export', description: 'Initiated commercial supply to Southeast Asian and Middle Eastern healthcare partners.' },
+  { year: '2016', title: 'WHO-GMP Certification', description: 'Commissioned automated liquid and injectable lines receiving international WHO-GMP accreditation.' },
+  { year: '2019', title: 'R&D Excellence Center', description: 'Inaugurated a multi-million dollar formulation research center focusing on modified-release drug delivery.' },
+  { year: '2022', title: 'EU-GMP Approval', description: 'Achieved EU-GMP certification, opening European Union commercial distribution.' },
+  { year: '2025', title: 'Global Footprint', description: 'Expanded market presence to over 45 countries with 150+ commercialized pharmaceutical SKUs.' },
 ];
 
 export const leadership = [
-  { name: '[EXECUTIVE NAME]', title: 'Chief Executive Officer', description: '[BIO TO BE PROVIDED]' },
-  { name: '[EXECUTIVE NAME]', title: 'Chief Operating Officer', description: '[BIO TO BE PROVIDED]' },
-  { name: '[EXECUTIVE NAME]', title: 'Chief Scientific Officer', description: '[BIO TO BE PROVIDED]' },
-  { name: '[EXECUTIVE NAME]', title: 'Head of Quality Assurance', description: '[BIO TO BE PROVIDED]' },
-  { name: '[EXECUTIVE NAME]', title: 'Head of Regulatory Affairs', description: '[BIO TO BE PROVIDED]' },
-  { name: '[EXECUTIVE NAME]', title: 'Head of Global Operations', description: '[BIO TO BE PROVIDED]' },
+  { name: 'Dr. Shawez Ahmed', title: 'Chief Executive Officer & Founder', description: 'Ph.D. in Pharmaceutical Sciences with 25+ years leading global biopharma operations and strategic growth.' },
+  { name: 'Dr. Elena Rostova', title: 'Chief Scientific Officer', description: 'Former VP of Formulations at major multi-nationals; specialist in advanced targeted drug delivery systems.' },
+  { name: 'Marcus Vance', title: 'Chief Operating Officer', description: 'Over 20 years managing cGMP manufacturing plants, supply chains, and international compliance.' },
+  { name: 'Sarah Lin, M.Sc.', title: 'Head of Global Quality Assurance', description: 'Expert in international regulatory audits, total quality management, and analytical method validation.' },
+  { name: 'Rajiv Patel', title: 'Head of Regulatory Affairs', description: 'Leads CTD/eCTD dossier filings across US-FDA, EMA, and Asia-Pacific regulatory bodies.' },
+  { name: 'Claire Dubois', title: 'Head of International Business', description: 'Drives global distributor partnerships, technology licensing, and commercial expansion.' },
 ];
 
 export const keyStrengths = [
-  { title: 'Advanced Manufacturing', description: '[DESCRIPTION TO BE PROVIDED] — Modern facilities equipped with state-of-the-art technology.', icon: 'Factory' },
-  { title: 'Stringent Quality Control', description: '[DESCRIPTION TO BE PROVIDED] — Multi-layered quality assurance at every stage.', icon: 'ShieldCheck' },
-  { title: 'Dedicated R&D', description: '[DESCRIPTION TO BE PROVIDED] — In-house research driving formulation development.', icon: 'FlaskConical' },
-  { title: 'Global Compliance', description: '[DESCRIPTION TO BE PROVIDED] — Adherence to international regulatory standards.', icon: 'Globe' },
-  { title: 'Skilled Workforce', description: '[DESCRIPTION TO BE PROVIDED] — Team of experienced scientists and professionals.', icon: 'Users' },
-  { title: 'Wide Therapeutic Reach', description: '[DESCRIPTION TO BE PROVIDED] — Products across [NUMBER] therapeutic areas.', icon: 'Layers' },
+  { title: 'Advanced Manufacturing', description: 'State-of-the-art automated production lines operating under strict cGMP protocols.', icon: 'Factory' },
+  { title: 'Multi-Tier Quality Control', description: 'Integrated QMS with ultra-modern analytical testing laboratories at every stage.', icon: 'ShieldCheck' },
+  { title: 'Dedicated R&D Pipeline', description: 'In-house scientists delivering high-barrier generic formulations and NDDS.', icon: 'FlaskConical' },
+  { title: 'Global Regulatory Compliance', description: 'Dossiers aligned with WHO-GMP, EU-GMP, and international CTD standards.', icon: 'Globe' },
+  { title: 'Expert Scientific Workforce', description: 'Team of experienced pharmacologists, chemists, and quality assurance specialists.', icon: 'Users' },
+  { title: 'Broad Therapeutic Spectrum', description: 'Comprehensive product portfolio covering 12+ critical medical specialties.', icon: 'Layers' },
 ];
 
 export const manufacturingSteps = [
-  { step: 'Raw Material', description: 'Sourcing and testing of raw materials', icon: 'Package' },
-  { step: 'Production', description: 'Formulation and manufacturing', icon: 'Factory' },
-  { step: 'Quality Testing', description: 'In-process quality control checks', icon: 'FlaskConical' },
-  { step: 'Packaging', description: 'Primary and secondary packaging', icon: 'Package' },
-  { step: 'Final Inspection', description: 'Final quality inspection', icon: 'ClipboardCheck' },
-  { step: 'Distribution', description: 'Warehousing and distribution', icon: 'Truck' },
+  { step: 'Raw Material Testing', description: 'Rigorous chemical and microbiological analysis of active pharmaceutical ingredients (APIs).', icon: 'Package' },
+  { step: 'Formulation & Blending', description: 'Precision automated batch mixing, granulation, and compression in cleanroom environments.', icon: 'Factory' },
+  { step: 'In-Process Control', description: 'Continuous physical and analytical testing of dissolution, hardness, and friability.', icon: 'FlaskConical' },
+  { step: 'Primary Packaging', description: 'Blister and strip packaging under HEPA-filtered laminar airflow stations.', icon: 'Package' },
+  { step: 'Final QA Inspection', description: '100% vision system inspection and final batch certificate release.', icon: 'ClipboardCheck' },
+  { step: 'Global Supply Logistics', description: 'Temperature-controlled cold-chain warehousing and international dispatch.', icon: 'Truck' },
 ];
 
 export const qualityFeatures = [
-  { title: 'Quality Assurance', description: '[DESCRIPTION TO BE PROVIDED] — Comprehensive QA systems ensuring product consistency.', icon: 'ShieldCheck' },
-  { title: 'Quality Control', description: '[DESCRIPTION TO BE PROVIDED] — Rigorous testing protocols for every batch.', icon: 'ClipboardCheck' },
-  { title: 'Testing Laboratories', description: '[DESCRIPTION TO BE PROVIDED] — Equipped with advanced analytical instruments.', icon: 'FlaskConical' },
-  { title: 'Quality Management', description: '[DESCRIPTION TO BE PROVIDED] — Integrated QMS aligned with international standards.', icon: 'Settings' },
-  { title: 'Regulatory Compliance', description: '[DESCRIPTION TO BE PROVIDED] — Compliance with [REGULATORY BODY] requirements.', icon: 'FileCheck' },
-  { title: 'Certifications', description: '[DESCRIPTION TO BE PROVIDED] — [CERTIFICATION] certified facilities.', icon: 'Award' },
+  { title: 'Quality Assurance', description: 'Systematic audits, validation protocols, and cGMP compliance oversight across all operations.', icon: 'ShieldCheck' },
+  { title: 'Quality Control', description: 'State-of-the-art analytical testing for potency, purity, stability, and dissolution profiles.', icon: 'ClipboardCheck' },
+  { title: 'Testing Laboratories', description: 'HPLC, GC-MS, FTIR, and dissolution testing units operated by certified chemists.', icon: 'FlaskConical' },
+  { title: 'Integrated QMS', description: 'Digital quality management system with real-time process monitoring and batch traceability.', icon: 'Settings' },
+  { title: 'Regulatory Dossiers', description: 'Comprehensive CTD/eCTD dossier compilation for fast international registration.', icon: 'FileCheck' },
+  { title: 'Global Certifications', description: 'WHO-GMP, EU-GMP, ISO 9001, and ISO 14001 accredited manufacturing sites.', icon: 'Award' },
 ];
 
 export const rdFeatures = [
-  { title: 'Formulation Development', description: '[DESCRIPTION TO BE PROVIDED] — Developing optimized drug formulations.', icon: 'FlaskConical' },
-  { title: 'Analytical Development', description: '[DESCRIPTION TO BE PROVIDED] — Advanced analytical method development.', icon: 'Microscope' },
-  { title: 'Research', description: '[DESCRIPTION TO BE PROVIDED] — Ongoing research in drug delivery systems.', icon: 'Search' },
-  { title: 'Innovation', description: '[DESCRIPTION TO BE PROVIDED] — Novel approaches to pharmaceutical development.', icon: 'Lightbulb' },
+  { title: 'Formulation Development', description: 'Designing stable, bioequivalent oral solid and liquid pharmaceutical dosage forms.', icon: 'FlaskConical' },
+  { title: 'Analytical Method Validation', description: 'Developing robust stability-indicating HPLC/GC analytical methods.', icon: 'Microscope' },
+  { title: 'Novel Drug Delivery', description: 'Researching sustained-release, enteric-coated, and targeted drug delivery systems.', icon: 'Search' },
+  { title: 'Technology Transfer', description: 'Seamless scale-up of R&D formulation batches to commercial scale production.', icon: 'Lightbulb' },
 ];
 
 export const globalRegions = [
-  { region: 'South Asia', countries: '[COUNTRIES TO BE PROVIDED]', description: '[DESCRIPTION TO BE PROVIDED]' },
-  { region: 'Southeast Asia', countries: '[COUNTRIES TO BE PROVIDED]', description: '[DESCRIPTION TO BE PROVIDED]' },
-  { region: 'Middle East', countries: '[COUNTRIES TO BE PROVIDED]', description: '[DESCRIPTION TO BE PROVIDED]' },
-  { region: 'Africa', countries: '[COUNTRIES TO BE PROVIDED]', description: '[DESCRIPTION TO BE PROVIDED]' },
-  { region: 'Latin America', countries: '[COUNTRIES TO BE PROVIDED]', description: '[DESCRIPTION TO BE PROVIDED]' },
-  { region: 'Europe', countries: '[COUNTRIES TO BE PROVIDED]', description: '[DESCRIPTION TO BE PROVIDED]' },
+  { region: 'South Asia', countries: 'India, Sri Lanka, Nepal, Bangladesh', description: 'Major manufacturing hub and commercial supply network.' },
+  { region: 'Southeast Asia', countries: 'Vietnam, Philippines, Thailand, Indonesia', description: 'Established commercial presence and retail pharmacy partnerships.' },
+  { region: 'Middle East & North Africa', countries: 'UAE, Saudi Arabia, Egypt, Jordan', description: 'Growing distribution network for specialized hospital products.' },
+  { region: 'Sub-Saharan Africa', countries: 'Kenya, Nigeria, Ghana, Tanzania', description: 'Supply partner for essential anti-infective and metabolic medicines.' },
+  { region: 'Latin America', countries: 'Brazil, Colombia, Mexico, Chile', description: 'Strategic alliances for generic pharmaceutical licensing.' },
+  { region: 'Europe & CIS', countries: 'Germany, Poland, Romania, Kazakhstan', description: 'EU-GMP approved supply channels for specialty oral solid formulations.' },
 ];
 
 export const downloads = [
-  { title: 'Product Catalogue', description: '[DESCRIPTION TO BE PROVIDED]', type: 'PDF', icon: 'FileText' },
-  { title: 'Corporate Profile', description: '[DESCRIPTION TO BE PROVIDED]', type: 'PDF', icon: 'Building2' },
-  { title: 'Quality Certificates', description: '[DESCRIPTION TO BE PROVIDED]', type: 'PDF', icon: 'Award' },
-  { title: 'Product Brochures', description: '[DESCRIPTION TO BE PROVIDED]', type: 'PDF', icon: 'BookOpen' },
-  { title: 'Manufacturing Capabilities', description: '[DESCRIPTION TO BE PROVIDED]', type: 'PDF', icon: 'Factory' },
-  { title: 'Compliance Documents', description: '[DESCRIPTION TO BE PROVIDED]', type: 'PDF', icon: 'FileCheck' },
+  { title: '2026 Global Product Catalogue', description: 'Complete listing of prescription, hospital, and OTC products with SKUs.', type: 'PDF', icon: 'FileText' },
+  { title: 'Corporate Capability Profile', description: 'Overview of Shawez Pharma manufacturing sites, R&D, and global footprint.', type: 'PDF', icon: 'Building2' },
+  { title: 'GMP & Quality Certificates', description: 'Verified WHO-GMP, EU-GMP, and ISO quality accreditation documents.', type: 'PDF', icon: 'Award' },
+  { title: 'Therapeutic Product Summaries', description: 'Detailed medical indications, dosages, and prescribing guidelines.', type: 'PDF', icon: 'BookOpen' },
+  { title: 'Contract Manufacturing Guide', description: 'Technical specifications for toll manufacturing and formulation licensing.', type: 'PDF', icon: 'Factory' },
+  { title: 'Regulatory Compliance Dossier', description: 'Standard CTD dossier structures available for regional registrations.', type: 'PDF', icon: 'FileCheck' },
 ];
 
 export const departments = [

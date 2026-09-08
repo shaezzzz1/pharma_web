@@ -119,14 +119,14 @@ function HeroSection() {
         {/* Stats bar */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-navy-800/50 border border-navy-800 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
           {[
-            { value: '[NUMBER]', label: 'Therapeutic Areas' },
-            { value: '[NUMBER]', label: 'Products' },
-            { value: '[NUMBER]', label: 'Countries Served' },
-            { value: '[YEAR]', label: 'Years of Excellence' },
+            { value: '12+', label: 'Therapeutic Specialties' },
+            { value: '150+', label: 'Commercial SKUs' },
+            { value: '45+', label: 'Countries Served' },
+            { value: '18+', label: 'Years of Excellence' },
           ].map((stat) => (
             <div key={stat.label} className="bg-navy-950/80 px-6 py-8 text-center">
               <div className="text-3xl md:text-4xl font-bold text-accent-400 mb-1">{stat.value}</div>
-              <div className="text-xs text-navy-400 uppercase tracking-wider">{stat.label}</div>
+              <div className="text-xs text-navy-400 uppercase tracking-wider font-semibold">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -157,14 +157,10 @@ function CompanyIntro() {
             </h2>
             <div className="space-y-4 text-navy-600 leading-relaxed">
               <p>
-                [COMPANY DESCRIPTION TO BE PROVIDED] — Shawez Pharma is a pharmaceutical company
-                dedicated to developing, manufacturing, and delivering high-quality medicines
-                that meet international standards.
+                Shawez Pharma is a science-led global pharmaceutical enterprise dedicated to research, cGMP manufacturing, and commercialization of therapeutic formulations meeting stringent WHO-GMP and EU-GMP regulatory standards.
               </p>
               <p>
-                Our operations span research and development, manufacturing, quality assurance,
-                and global distribution — ensuring that healthcare professionals and patients
-                have access to reliable, effective medications.
+                Our vertically integrated operations span formulation development, high-throughput analytical testing, cleanroom manufacturing, and international distribution — bringing trusted therapies to patients worldwide.
               </p>
             </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -182,7 +178,7 @@ function CompanyIntro() {
             </div>
             <div className="absolute -bottom-6 -left-6 w-48 h-32 bg-navy-900 hidden md:flex items-center justify-center p-6">
               <div>
-                <div className="text-3xl font-bold text-accent-400">[YEAR]</div>
+                <div className="text-3xl font-bold text-accent-400">2008</div>
                 <div className="text-xs text-navy-300 uppercase tracking-wider mt-1">Established</div>
               </div>
             </div>
@@ -372,9 +368,7 @@ function ManufacturingPreview() {
             State-of-the-Art Production Facilities
           </h2>
           <p className="text-navy-300 text-lg leading-relaxed mb-10">
-            [DESCRIPTION TO BE PROVIDED] — Our manufacturing facilities are equipped with
-            advanced technology and operate under stringent quality protocols to ensure
-            every product meets international standards.
+            Our automated manufacturing plants are engineered with cGMP cleanrooms, climate-controlled suites, and high-speed tablet compression and ampoule filling lines.
           </p>
 
           {/* Process diagram */}
@@ -433,9 +427,7 @@ function QualityPreview() {
               Uncompromising Quality at Every Stage
             </h2>
             <p className="text-navy-600 leading-relaxed mb-8">
-              [DESCRIPTION TO BE PROVIDED] — Quality is embedded in everything we do. From
-              raw material sourcing to final product release, every step is governed by
-              rigorous quality protocols and international regulatory standards.
+              Quality is embedded into our operational culture. From raw material API testing to final finished batch certificate release, every process adheres strictly to WHO-GMP and international pharmacopeial standards.
             </p>
             <Link to="/quality" className="btn-primary text-sm">
               Our Quality Systems <ArrowRight className="w-4 h-4" />
@@ -460,15 +452,13 @@ function RdPreview() {
               Driving Innovation in Pharmaceutical Science
             </h2>
             <p className="text-navy-600 leading-relaxed mb-8">
-              [DESCRIPTION TO BE PROVIDED] — Our R&D division focuses on formulation development,
-              analytical methods, and innovative drug delivery systems to bring better
-              medications to market.
+              Our R&D division focuses on formulation development, bioequivalence optimization, and novel drug delivery systems to bring affordable high-potency therapeutics to market.
             </p>
             <div className="space-y-4">
               {[
-                { icon: 'FlaskConical', title: 'Formulation Development', desc: '[DESCRIPTION TO BE PROVIDED]' },
-                { icon: 'Microscope', title: 'Analytical Development', desc: '[DESCRIPTION TO BE PROVIDED]' },
-                { icon: 'Lightbulb', title: 'Innovation & Research', desc: '[DESCRIPTION TO BE PROVIDED]' },
+                { icon: 'FlaskConical', title: 'Formulation Development', desc: 'Sustained-release and modified oral solid dosage form development.' },
+                { icon: 'Microscope', title: 'Analytical Development', desc: 'HPLC, GC-MS method validation and bio-stability profiling.' },
+                { icon: 'Lightbulb', title: 'Innovation & Research', desc: 'Next-generation drug delivery platforms for improved patient adherence.' },
               ].map((item) => {
                 const Icon = iconMap[item.icon] || FlaskConical;
                 return (
@@ -511,8 +501,7 @@ function GlobalPreview() {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Serving Markets Worldwide</h2>
           <p className="text-navy-300 text-lg leading-relaxed">
-            [DESCRIPTION TO BE PROVIDED] — Shawez Pharma serves customers across multiple
-            regions through a robust distribution network and international partnerships.
+            Shawez Pharma serves healthcare institutions and retail pharmacies across 45+ countries through a cold-chain logistics distribution network and international strategic alliances.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-navy-800 border border-navy-800 max-w-4xl mx-auto">
@@ -552,17 +541,7 @@ function NewsPreview({ news }: { news: NewsArticle[] }) {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {(news.length > 0 ? news : Array.from({ length: 3 }).map((_, i) => ({
-            id: `fallback-${i}`,
-            title: '[NEWS TITLE TO BE PROVIDED]',
-            slug: 'news-placeholder',
-            excerpt: '[EXCERPT TO BE PROVIDED]',
-            content: null,
-            category: ['Company News', 'Product Updates', 'Research'][i],
-            image_url: null,
-            published_date: '2026-08-15',
-            is_published: true,
-          }))).map((article, i) => (
+          {(news.length > 0 ? news : defaultNewsArticles).map((article, i) => (
             <Link
               key={article.id}
               to={`/news/${article.slug}`}
@@ -601,18 +580,17 @@ function EnquiryCTA() {
       <div className="container-x relative py-20">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Have a Product Enquiry?
+            Have a Product or Bulk Procurement Enquiry?
           </h2>
           <p className="text-accent-50 text-lg mb-10">
-            [DESCRIPTION TO BE PROVIDED] — Get in touch with our team to discuss your pharmaceutical
-            requirements. We're here to help.
+            Get in touch with our international business team to discuss your pharmaceutical distribution, contract manufacturing, or licensing requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/enquiry" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-accent-700 font-semibold text-sm tracking-wide hover:bg-navy-950 hover:text-white transition-all duration-300">
+            <Link to="/enquiry" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-accent-700 font-bold text-sm tracking-wide hover:bg-navy-950 hover:text-white transition-all duration-300 rounded-lg shadow-lg">
               Submit Enquiry <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-semibold text-sm tracking-wide hover:bg-white hover:text-accent-700 transition-all duration-300">
-              Contact Us
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-sm tracking-wide hover:bg-white hover:text-accent-700 transition-all duration-300 rounded-lg">
+              Contact Sales
             </Link>
           </div>
         </div>

@@ -1,141 +1,136 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
-import { company, navItems } from '@/lib/data';
+import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, Award, Globe, FileText } from 'lucide-react';
+import { company } from '@/lib/data';
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-950 text-navy-200">
-      {/* CTA strip */}
-      <div className="border-b border-navy-800">
+    <footer className="bg-navy-950 text-navy-200 border-t border-navy-800">
+      {/* High Impact Call To Action Strip */}
+      <div className="border-b border-navy-800/80 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950">
         <div className="container-x py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-2">Partner with Shawez Pharma</h3>
-            <p className="text-navy-300 text-sm max-w-xl">
-              [DESCRIPTION TO BE PROVIDED] — Discover how we can meet your pharmaceutical needs.
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-accent-400 mb-2">
+              <ShieldCheck className="w-4 h-4" /> Global Partnership
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Partner with Shawez Pharma</h3>
+            <p className="text-navy-300 text-sm max-w-2xl mt-1 leading-relaxed">
+              Explore contract manufacturing, regional distribution opportunities, or submit formulation inquiry to our global sales team.
             </p>
           </div>
-          <Link to="/enquiry" className="btn-accent whitespace-nowrap">
-            Get in Touch <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/enquiry" className="btn-accent text-xs font-bold uppercase tracking-wider py-3.5 px-7 rounded-lg shadow-lg shadow-accent-500/20 hover:shadow-accent-500/30 whitespace-nowrap">
+              Submit Enquiry <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/contact" className="px-6 py-3.5 border border-navy-700 text-white font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-navy-900 transition-colors whitespace-nowrap">
+              Contact Sales
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* Main footer */}
+      {/* Main Footer Links */}
       <div className="container-x py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-navy-800 flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" strokeLinejoin="round" />
-                  <path d="M12 7v10M7 9.5v5M17 9.5v5" strokeLinecap="round" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Company Brand Column */}
+          <div className="lg:col-span-2">
+            <Link to="/" className="flex items-center gap-3 mb-5 group">
+              <div className="w-10 h-10 bg-navy-900 rounded-xl flex items-center justify-center border border-navy-800 shadow-md">
+                <svg viewBox="0 0 32 32" className="w-5 h-5" fill="none">
+                  <rect width="32" height="32" rx="8" fill="#102a43" />
+                  <circle cx="16" cy="16" r="10" stroke="#38bec9" strokeWidth="2.5" strokeDasharray="4 2" />
+                  <path d="M11 16H21M16 11V21" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" />
                 </svg>
               </div>
-              <span className="text-lg font-bold text-white">
-                Shawez <span className="text-accent-400">Pharma</span>
-              </span>
-            </div>
-            <p className="text-sm text-navy-400 leading-relaxed mb-6">
+              <div>
+                <span className="text-xl font-black text-white tracking-tight">
+                  SHAWEZ <span className="text-accent-400">PHARMA</span>
+                </span>
+                <span className="block text-[9px] font-bold uppercase tracking-[0.2em] text-navy-400">
+                  Global Healthcare Excellence
+                </span>
+              </div>
+            </Link>
+
+            <p className="text-sm text-navy-400 leading-relaxed mb-6 max-w-md">
               {company.description}
             </p>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start gap-3">
+
+            <div className="space-y-3 text-xs">
+              <div className="flex items-start gap-3 text-navy-300">
                 <MapPin className="w-4 h-4 text-accent-400 mt-0.5 flex-shrink-0" />
-                <span className="text-navy-400">{company.address}</span>
+                <span>{company.address}</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 text-navy-300">
                 <Phone className="w-4 h-4 text-accent-400 flex-shrink-0" />
-                <span className="text-navy-400">{company.phone}</span>
+                <a href={`tel:${company.phone}`} className="hover:text-white transition-colors">{company.phone}</a>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 text-navy-300">
                 <Mail className="w-4 h-4 text-accent-400 flex-shrink-0" />
-                <span className="text-navy-400">{company.email}</span>
+                <a href={`mailto:${company.email}`} className="hover:text-white transition-colors">{company.email}</a>
               </div>
             </div>
           </div>
 
-          {/* Quick links */}
+          {/* Column 2: Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">Navigation</h4>
-            <ul className="space-y-2.5">
-              {navItems.slice(0, 6).map((item) => (
-                <li key={item.path}>
-                  <Link to={item.path} className="text-sm text-navy-400 hover:text-accent-400 transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-5 border-l-2 border-accent-500 pl-2.5">Company</h4>
+            <ul className="space-y-2.5 text-xs text-navy-400">
+              <li><Link to="/about" className="hover:text-accent-400 transition-colors">About Us</Link></li>
+              <li><Link to="/manufacturing" className="hover:text-accent-400 transition-colors">Manufacturing Facility</Link></li>
+              <li><Link to="/quality" className="hover:text-accent-400 transition-colors">Quality Assurance</Link></li>
+              <li><Link to="/research" className="hover:text-accent-400 transition-colors">R&D Innovation</Link></li>
+              <li><Link to="/global-presence" className="hover:text-accent-400 transition-colors">Global Network</Link></li>
+              <li><Link to="/careers" className="hover:text-accent-400 transition-colors">Careers</Link></li>
             </ul>
           </div>
 
+          {/* Column 3: Portfolio */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">Resources</h4>
-            <ul className="space-y-2.5">
-              {navItems.slice(6).map((item) => (
-                <li key={item.path}>
-                  <Link to={item.path} className="text-sm text-navy-400 hover:text-accent-400 transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link to="/downloads" className="text-sm text-navy-400 hover:text-accent-400 transition-colors">
-                  Downloads
-                </Link>
-              </li>
-              <li>
-                <Link to="/enquiry" className="text-sm text-navy-400 hover:text-accent-400 transition-colors">
-                  Product Enquiry
-                </Link>
-              </li>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-5 border-l-2 border-accent-500 pl-2.5">Products</h4>
+            <ul className="space-y-2.5 text-xs text-navy-400">
+              <li><Link to="/products" className="hover:text-accent-400 transition-colors font-semibold text-navy-300">All Products Catalogue</Link></li>
+              <li><Link to="/therapeutic-areas" className="hover:text-accent-400 transition-colors font-semibold text-navy-300">Therapeutic Specialties</Link></li>
+              <li><Link to="/products?ta=Anti-Infectives" className="hover:text-accent-400 transition-colors">Anti-Infectives</Link></li>
+              <li><Link to="/products?ta=Cardiology" className="hover:text-accent-400 transition-colors">Cardiology Formulations</Link></li>
+              <li><Link to="/products?ta=Diabetes" className="hover:text-accent-400 transition-colors">Diabetes & Metabolism</Link></li>
+              <li><Link to="/products?ta=Gastroenterology" className="hover:text-accent-400 transition-colors">Gastroenterology</Link></li>
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Column 4: Resources & Certifications */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">Stay Updated</h4>
-            <p className="text-sm text-navy-400 mb-4">
-              Subscribe to receive the latest news and product updates.
-            </p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-4 py-2.5 bg-navy-900 border border-navy-800 text-white text-sm placeholder-navy-500 focus:outline-none focus:border-accent-500"
-              />
-              <button type="submit" className="px-4 py-2.5 bg-accent-500 text-white text-sm font-medium hover:bg-accent-600 transition-colors">
-                Subscribe
-              </button>
-            </form>
-            <div className="mt-6 flex gap-3">
-              {['LinkedIn', 'Twitter', 'Facebook'].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="w-9 h-9 flex items-center justify-center bg-navy-800 text-navy-400 hover:bg-accent-500 hover:text-white transition-colors text-xs"
-                  aria-label={social}
-                >
-                  {social[0]}
-                </a>
-              ))}
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-5 border-l-2 border-accent-500 pl-2.5">Resources</h4>
+            <ul className="space-y-2.5 text-xs text-navy-400">
+              <li><Link to="/news" className="hover:text-accent-400 transition-colors">News & Press Releases</Link></li>
+              <li><Link to="/downloads" className="hover:text-accent-400 transition-colors flex items-center gap-1.5"><FileText className="w-3 h-3 text-accent-400" /> Downloads & Dossiers</Link></li>
+              <li><Link to="/enquiry" className="hover:text-accent-400 transition-colors">Product Inquiry Form</Link></li>
+              <li><Link to="/contact" className="hover:text-accent-400 transition-colors">Global Offices & Contact</Link></li>
+            </ul>
+
+            <div className="mt-6 pt-4 border-t border-navy-800">
+              <div className="flex items-center gap-2 text-xs text-accent-400 font-semibold mb-1">
+                <Award className="w-4 h-4" /> cGMP Certified
+              </div>
+              <p className="text-[11px] text-navy-500 leading-tight">
+                Facilities compliant with WHO-GMP, EU-GMP, and international ISO quality standards.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-navy-800">
+      {/* Bottom Bar */}
+      <div className="border-t border-navy-800/80 bg-navy-950/90">
         <div className="container-x py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-navy-500">
-            © {year} {company.name}. All rights reserved.
+            © {year} {company.name}. All rights reserved. Prescribing information may vary by regional regulatory approvals.
           </p>
           <div className="flex gap-6 text-xs text-navy-500">
             <a href="#" className="hover:text-navy-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-navy-300 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-navy-300 transition-colors">Cookie Policy</a>
+            <a href="#" className="hover:text-navy-300 transition-colors">Terms of Compliance</a>
+            <a href="#" className="hover:text-navy-300 transition-colors">Pharmacovigilance</a>
           </div>
         </div>
       </div>
