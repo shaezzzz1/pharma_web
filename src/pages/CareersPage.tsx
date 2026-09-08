@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Briefcase, MapPin, ArrowRight, Users, Heart, TrendingUp, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { supabase, type JobOpening } from '@/lib/supabase';
+import { defaultJobOpenings } from '@/lib/mockData';
 import { images, departments } from '@/lib/data';
 
 export default function CareersPage() {
@@ -12,9 +13,14 @@ export default function CareersPage() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await supabase.from('job_openings').select('*').eq('is_active', true).order('posted_date', { ascending: false });
-      setJobs(data || []);
-      setLoading(false);
+      try {
+        const { data } = await supabase.from('job_openings').select('*').eq('is_active', true).order('posted_date', { ascending: false });
+        setJobs(data && data.length > 0 ? data : defaultJobOpenings);
+      } catch {
+        setJobs(defaultJobOpenings);
+      } finally {
+        setLoading(false);
+      }
     })();
   }, []);
 

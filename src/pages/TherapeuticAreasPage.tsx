@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { supabase, type TherapeuticArea, type Product } from '@/lib/supabase';
+import { defaultProducts, defaultTherapeuticAreas } from '@/lib/mockData';
 import { images, therapeuticAreaIcons } from '@/lib/data';
 import { useStaggeredAnimation } from '@/lib/useScrollAnimation';
 
@@ -27,8 +28,12 @@ export default function TherapeuticAreasPage() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await supabase.from('therapeutic_areas').select('*').order('display_order');
-      if (data) setAreas(data);
+      try {
+        const { data } = await supabase.from('therapeutic_areas').select('*').order('display_order');
+        setAreas(data && data.length > 0 ? data : defaultTherapeuticAreas);
+      } catch {
+        setAreas(defaultTherapeuticAreas);
+      }
     })();
   }, []);
 
@@ -36,11 +41,24 @@ export default function TherapeuticAreasPage() {
     if (!slug && areas.length > 0) return;
     if (slug) {
       (async () => {
-        const { data: area } = await supabase.from('therapeutic_areas').select('*').eq('slug', slug).maybeSingle();
-        setSelectedArea(area);
-        if (area) {
-          const { data: prods } = await supabase.from('products').select('*').eq('therapeutic_area', area.name).order('display_order');
-          setProducts(prods || []);
+        try {
+          const { data: area } = await supabase.from('therapeutic_areas').select('*').eq('slug', slug).maybeSingle();
+          const targetArea = area || defaultTherapeuticAreas.find(a => a.slug === slug) || null;
+          setSelectedArea(targetArea);
+          if (targetArea) {
+            const { data: prods } = await supabase.from('products').select('*').eq('therapeutic_area', targetArea.name).order('display_order');
+            if (prods && prods.length > 0) {
+              setProducts(prods);
+            } else {
+              setProducts(defaultProducts.filter(p => p.therapeutic_area?.toLowerCase() === targetArea.name.toLowerCase() || p.category?.toLowerCase() === targetArea.name.toLowerCase()));
+            }
+          }
+        } catch {
+          const targetArea = defaultTherapeuticAreas.find(a => a.slug === slug) || null;
+          setSelectedArea(targetArea);
+          if (targetArea) {
+            setProducts(defaultProducts.filter(p => p.therapeutic_area?.toLowerCase() === targetArea.name.toLowerCase() || p.category?.toLowerCase() === targetArea.name.toLowerCase()));
+          }
         }
       })();
     } else {

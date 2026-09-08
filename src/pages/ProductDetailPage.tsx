@@ -7,6 +7,7 @@ import {
 import PageHeader from '@/components/PageHeader';
 import EnquiryForm from '@/components/EnquiryForm';
 import { supabase, type Product } from '@/lib/supabase';
+import { defaultProducts } from '@/lib/mockData';
 import { images } from '@/lib/data';
 
 const productImagesList = [
@@ -26,18 +27,32 @@ export default function ProductDetailPage() {
     if (!slug) return;
     (async () => {
       setLoading(true);
-      const { data } = await supabase.from('products').select('*').eq('slug', slug).maybeSingle();
-      setProduct(data);
-      if (data) {
-        const { data: rel } = await supabase
-          .from('products')
-          .select('*')
-          .eq('therapeutic_area', data.therapeutic_area)
-          .neq('id', data.id)
-          .limit(4);
-        setRelated(rel || []);
+      try {
+        const { data } = await supabase.from('products').select('*').eq('slug', slug).maybeSingle();
+        const foundProduct = data || defaultProducts.find(p => p.slug === slug) || null;
+        setProduct(foundProduct);
+        if (foundProduct) {
+          const { data: rel } = await supabase
+            .from('products')
+            .select('*')
+            .eq('therapeutic_area', foundProduct.therapeutic_area)
+            .neq('id', foundProduct.id)
+            .limit(4);
+          if (rel && rel.length > 0) {
+            setRelated(rel);
+          } else {
+            setRelated(defaultProducts.filter(p => p.id !== foundProduct.id).slice(0, 4));
+          }
+        }
+      } catch {
+        const foundProduct = defaultProducts.find(p => p.slug === slug) || null;
+        setProduct(foundProduct);
+        if (foundProduct) {
+          setRelated(defaultProducts.filter(p => p.id !== foundProduct.id).slice(0, 4));
+        }
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     })();
   }, [slug]);
 

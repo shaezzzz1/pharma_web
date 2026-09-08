@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { images, keyStrengths, manufacturingSteps, therapeuticAreaIcons } from '@/lib/data';
+import { defaultProducts, defaultTherapeuticAreas, defaultNewsArticles } from '@/lib/mockData';
 import { useScrollAnimation, useStaggeredAnimation } from '@/lib/useScrollAnimation';
 import { supabase, type Product, type TherapeuticArea, type NewsArticle } from '@/lib/supabase';
 
@@ -25,14 +26,20 @@ export default function HomePage() {
 
   useEffect(() => {
     (async () => {
-      const [p, ta, n] = await Promise.all([
-        supabase.from('products').select('*').eq('is_featured', true).order('display_order').limit(8),
-        supabase.from('therapeutic_areas').select('*').order('display_order'),
-        supabase.from('news_articles').select('*').eq('is_published', true).order('published_date', { ascending: false }).limit(3),
-      ]);
-      if (p.data) setProducts(p.data);
-      if (ta.data) setTherapeuticAreas(ta.data);
-      if (n.data) setNews(n.data);
+      try {
+        const [p, ta, n] = await Promise.all([
+          supabase.from('products').select('*').eq('is_featured', true).order('display_order').limit(8),
+          supabase.from('therapeutic_areas').select('*').order('display_order'),
+          supabase.from('news_articles').select('*').eq('is_published', true).order('published_date', { ascending: false }).limit(3),
+        ]);
+        setProducts(p.data && p.data.length > 0 ? p.data : defaultProducts.filter(x => x.is_featured));
+        setTherapeuticAreas(ta.data && ta.data.length > 0 ? ta.data : defaultTherapeuticAreas);
+        setNews(n.data && n.data.length > 0 ? n.data : defaultNewsArticles);
+      } catch {
+        setProducts(defaultProducts.filter(x => x.is_featured));
+        setTherapeuticAreas(defaultTherapeuticAreas);
+        setNews(defaultNewsArticles);
+      }
     })();
   }, []);
 

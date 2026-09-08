@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowRight, Calendar, Newspaper, AlertCircle } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { supabase, type NewsArticle } from '@/lib/supabase';
+import { defaultNewsArticles } from '@/lib/mockData';
 import { images } from '@/lib/data';
 import { useStaggeredAnimation } from '@/lib/useScrollAnimation';
 
@@ -19,9 +20,14 @@ export default function NewsPage() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await supabase.from('news_articles').select('*').eq('is_published', true).order('published_date', { ascending: false });
-      setArticles(data || []);
-      setLoading(false);
+      try {
+        const { data } = await supabase.from('news_articles').select('*').eq('is_published', true).order('published_date', { ascending: false });
+        setArticles(data && data.length > 0 ? data : defaultNewsArticles);
+      } catch {
+        setArticles(defaultNewsArticles);
+      } finally {
+        setLoading(false);
+      }
     })();
   }, []);
 

@@ -3,6 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { Search, SlidersHorizontal, X, ChevronRight, Package } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import { supabase, type Product, type TherapeuticArea } from '@/lib/supabase';
+import { defaultProducts, defaultTherapeuticAreas } from '@/lib/mockData';
 import { images } from '@/lib/data';
 
 const productImagesList = [
@@ -27,13 +28,19 @@ export default function ProductsPage() {
 
   useEffect(() => {
     (async () => {
-      const [p, ta] = await Promise.all([
-        supabase.from('products').select('*').order('display_order'),
-        supabase.from('therapeutic_areas').select('*').order('display_order'),
-      ]);
-      if (p.data) setProducts(p.data);
-      if (ta.data) setTherapeuticAreas(ta.data);
-      setLoading(false);
+      try {
+        const [p, ta] = await Promise.all([
+          supabase.from('products').select('*').order('display_order'),
+          supabase.from('therapeutic_areas').select('*').order('display_order'),
+        ]);
+        setProducts(p.data && p.data.length > 0 ? p.data : defaultProducts);
+        setTherapeuticAreas(ta.data && ta.data.length > 0 ? ta.data : defaultTherapeuticAreas);
+      } catch {
+        setProducts(defaultProducts);
+        setTherapeuticAreas(defaultTherapeuticAreas);
+      } finally {
+        setLoading(false);
+      }
     })();
   }, []);
 
